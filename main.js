@@ -3,6 +3,25 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+document.getElementById("modal").classList.add("hidden")
+
+
+document.body.addEventListener("click", function (e) {
+  e.preventDefault()
+  if (e.target && e.target.nodeName == "SPAN") {
+
+
+    if (e.target.textContent === FULL_HEART) {
+      e.target.textContent = EMPTY_HEART
+      e.target.style.color = ""
+    } else {
+      e.target.textContent = FULL_HEART
+      e.target.style.color = "red"
+    }
+
+  }
+
+});
 
 
 
