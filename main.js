@@ -4,7 +4,34 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+let iconStates = {
+  "♡": "♥",
+  "♥": "♡"
+}
+let colorStates = {
+  "red" : "",
+  "": "red"
+}
 
+let articleHearts = document.querySelectorAll(".like");
+
+
+
+function likeCallback(entry) {
+  let heart = entry.target
+  mimicServerCall("fakeUrl")
+  .then(function(serverMessage){
+    heart.innerText = iconStates[heart.innerText]
+    heart.style.color = colorStates[heart.style.color]
+  })
+  .catch(function(error){
+    document.getElementById("modal".classname= "")
+  })
+}
+
+for (let icon of articleHearts) {
+  icon.addEventListener("click", likeCallback)
+}
 
 
 //------------------------------------------------------------------------------
